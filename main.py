@@ -16,34 +16,23 @@ def generate_prime_number():
 
 def generate_coprime_number(phi):
 
-    # coprime_number = []
-    # for number in range(2, phi):
-    #     if math.gcd(phi, number) == 1 and modular_multiplicative_inverse(number, phi) != None:
-    #         coprime_number.append(number)
-    # for element in coprime_number:
-    #     if element == modular_multiplicative_inverse(element, phi):
-    #         coprime_number.remove(element)
-    # return coprime_number
-
-    # number = phi + 1
-    # coprime = random.randint(1, number)
-    # return coprime
     final_range = phi + 1
     while True:
         coprime = random.randint(1, final_range)
         if math.gcd(coprime, phi) == 1:
             return coprime
 
+def modular_multiplicative_inverse(e, phi):
 
+    for number in phi - 1:
+        if (e * number) % phi == 1:
+            return number
 
-def modular_multiplicative_inverse():
+# p = generate_prime_number()
+# q = generate_prime_number()
 
-    pass
-
-
-
-p = generate_prime_number()
-q = generate_prime_number()
+p = 3
+q = 11
 
 test = (p - 1) * (q - 1)
 print(test)
@@ -52,8 +41,8 @@ print(generate_coprime_number(test))
 def generate_key():
 
     n = p * q
-    # Euler's totient function / phi
+    # Euler's totient function
     phi = (p - 1) * (q - 1)
     e = generate_coprime_number(phi)
-    d = modular_multiplicative_inverse(e)
+    d = modular_multiplicative_inverse(e, phi)
     
