@@ -3,7 +3,7 @@ import random
 class GeneratePrimeNumber:
 
     def __init__(self) -> None:
-        self.bits = 32
+        self.bits = 8
     
     def generate(self) -> int:
         number = self.__get_random_number()
