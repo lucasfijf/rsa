@@ -16,14 +16,9 @@ class GenerateKeys:
         e = self.__coprime(phi)
         d = self.__modular_multiplicative_inverse(e, phi)
         keys = {
-            "private_keys": {
-                "n": n,
-                "e": e
-            },
-            "public_keys": {
-                "n": n,
-                "d": d
-            }
+            "n": n,
+            "e": e,
+            "d": d
         }
         return keys
 
