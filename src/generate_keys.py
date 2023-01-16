@@ -1,6 +1,6 @@
 import random
 from typing import Type
-from generate_prime_number import GeneratePrimeNumber
+from .generate_prime_number import GeneratePrimeNumber
 
 class GenerateKeys:
 
